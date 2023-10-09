@@ -1,0 +1,12 @@
+variable "region" {}
+variable "vpc_cidr_block" {}
+variable "env_prefix" {}
+variable "avail_zone" {}
+variable "subnet_cidr_block" {}
+variable "my_ip" {}
+variable "custom_ports" {}
+variable "instance_type" {}
+variable "key_name" {}
+variable "public_key_location" {}
+variable "user_data_file_location" {}
+variable "aws_cred_location" {}
