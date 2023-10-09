@@ -2,6 +2,7 @@
 resource "aws_security_group" "sg" {
   vpc_id = var.vpc_id
   name   = "nginx-sg"
+  description = "All inbound traffic"
   ingress {
     description = "open ssh port"
     from_port   = 22
@@ -20,6 +21,7 @@ resource "aws_security_group" "sg" {
     }
   }
   egress {
+    description = "egress"
     cidr_blocks     = ["0.0.0.0/0"]
     from_port       = 0
     to_port         = 0

@@ -23,6 +23,12 @@ resource "aws_instance" "nginx-server" {
   key_name                    = aws_key_pair.my-key.key_name
   vpc_security_group_ids      = [var.sg_id]
   associate_public_ip_address = true
+  metadata_options {
+    http_tokens = "required"
+  }
+  root_block_device {
+    encrypted = true
+  }
   user_data = file(var.user_data_file_location)
   tags = {
     Name = "${var.env_prefix}-server"
